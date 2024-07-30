@@ -10,7 +10,7 @@ library(dplyr)
 library(caret)
 library(MASS)
 library(lsa)
-df <- read_excel("C:/Users/astav/Documents/80/Data_80 participants V2.xlsx")
+df <- read_excel("Data_80 participants V2.xlsx")
 
 #modify df to include new participant's information in the last column
 
