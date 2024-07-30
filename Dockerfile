@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libssl-dev \
     libsodium-dev \
+    libnlopt-dev \  # Add this for nloptr
+    build-essential \  # Ensure you have essential build tools
     && rm -rf /var/lib/apt/lists/*
 
 # Install R packages
