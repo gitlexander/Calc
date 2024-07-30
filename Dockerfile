@@ -10,6 +10,16 @@ RUN apt-get update && apt-get install -y \
 # Install R packages
 RUN R -e "install.packages('plumber', repos='http://cran.us.r-project.org')"
 RUN R -e "install.packages('webutils', repos='http://cran.us.r-project.org')"
+RUN R -e "install.packages('readr', repos='http://cran.us.r-project.org')"
+RUN R -e "install.packages('readxl', repos='http://cran.us.r-project.org')"
+RUN R -e "install.packages('ggplot2', repos='http://cran.us.r-project.org')"
+RUN R -e "install.packages('data.table', repos='http://cran.us.r-project.org')"
+RUN R -e "install.packages('tidyr', repos='http://cran.us.r-project.org')"
+RUN R -e "install.packages('car', repos='http://cran.us.r-project.org')"
+RUN R -e "install.packages('dplyr', repos='http://cran.us.r-project.org')"
+RUN R -e "install.packages('caret', repos='http://cran.us.r-project.org')"
+RUN R -e "install.packages('MASS', repos='http://cran.us.r-project.org')"
+RUN R -e "install.packages('lsa', repos='http://cran.us.r-project.org')"
 
 # Copy the API script into the Docker image
 COPY plumber.R /plumber.R
