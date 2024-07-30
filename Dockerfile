@@ -21,6 +21,9 @@ RUN R -e "install.packages('caret', repos='http://cran.us.r-project.org')"
 RUN R -e "install.packages('MASS', repos='http://cran.us.r-project.org')"
 RUN R -e "install.packages('lsa', repos='http://cran.us.r-project.org')"
 
+#Copy the excel sheet with data into the Docker image
+COPY Data.xlsx /Data.xlsx
+
 # Copy the API script into the Docker image
 COPY plumber.R /plumber.R
 
