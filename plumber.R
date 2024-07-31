@@ -350,6 +350,7 @@ function(nage, ngender, nmednum, nmedhisnum, ncog, nphy, nvis, nmotiv, nenv, nhe
   
   #7. Conclusion
   
-  as.vector(pred1$Subtasks)
+result1 <- data.frame(subID=pred1$Subtasks, probability=pred1$prop)
+  print(result1)
   
 }
