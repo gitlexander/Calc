@@ -1,5 +1,5 @@
 # Use the official R image from the Docker Hub
-FROM r-base:latest
+FROM r-base:4.3.1-bullseye
 
 # Install system dependencies needed for R packages
 RUN apt-get update && apt-get install -y \
