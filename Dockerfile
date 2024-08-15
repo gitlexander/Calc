@@ -3,7 +3,7 @@ FROM r-base:latest
 
 # Install system dependencies needed for R packages
 RUN apt-get update && apt-get install -y \
-    libcurl4-openssl-dev \
+    libcurl4-openssl-dev=7.64.0-4 \
     libssl-dev \
     libsodium-dev \
     cmake \
