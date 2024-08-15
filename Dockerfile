@@ -2,14 +2,13 @@
 FROM r-base:latest
 
 # Install system dependencies needed for R packages
-RUN apt-get update && apt-get upgrade -y \
-    && apt-get install -y \
-        libcurl4-openssl-dev \
-        libssl-dev \
-        libsodium-dev \
-        cmake \
-        libnlopt-dev \
-        build-essential \
+RUN apt-get update && apt-get install -y \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libsodium-dev \
+    cmake \
+    libnlopt-dev \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 # Install R packages
