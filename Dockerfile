@@ -2,9 +2,6 @@
 FROM r-base:latest
 
 # Install system dependencies needed for R packages
-sudo apt update
-sudo apt upgrade
-
 RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libssl-dev \
