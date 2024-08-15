@@ -350,7 +350,51 @@ function(nage, ngender, nmednum, nmedhisnum, ncog, nphy, nvis, nmotiv, nenv, nhe
   
   #7. Conclusion
   
-result1 <- data.frame(subID=pred1$Subtasks, probability=pred1$prop)
+result1 <- data.frame(subID=pred1$Subtasks, probability=round((pred1$prop)*100))
+# Assuming you already have result1 and descriptions_df data frames
+
+# Create the descriptions data frame
+descriptions_df <- data.frame(
+  subID = c("A1", "A2", "A4", "A5", "A6", "B1", "B2", "B3", "B4", 
+            "C1", "C2", "D2", "D3", "D4", "D5", "D6", "G1", "G2", 
+            "G3", "H1", "I1", "I3", "M1", "P1", "R1", "R2", "T1", "T2"),
+  description = c(description = c(
+    "Locate the battery/cartridge compartment/medication cavity",
+    "Place/insert batteries correctly",
+    "Slide in/out battery compartment door",
+    "Slide a tab/button",
+    "Check/ensure/verify the device is on or the lock is placed in position/Follow instructions/Ensure indicator light flashes",
+    "Flip device",
+    "Insert key and rotate",
+    "Press and rotate a lid",
+    "Open a lid by lifting",
+    "Press and hold a button on a device",
+    "Press a button on a device",
+    "Open pill box or compartment or tray or door by sliding",
+    "Pick up the correct pillbox/pill organizer/open correct compartment",
+    "Insert/fill/place medication in compartment/pillbox/pill organizer",
+    "Close lid",
+    "Put stickers on pillbox dividers",
+    "Remove the medication",
+    "Grab/hold the device",
+    "Place hand over open slot",
+    "Rotate the carousel three days from today’s date",
+    "Locate and touch on an icon/button on an app or screen",
+    "Scroll through the options on a screen",
+    "Align and insert cartridge into the designated slot",
+    "Tear packaging",
+    "Rotate retaining clips at each end of the device in an open/close position",
+    "Align connectors to one another and gently push card into the device",
+    "Pierce cavity barrier",
+    "Pinch number printed on card and pull out"
+  )
+  ) 
+)
+
+# Merge result1 with descriptions_df to add descriptions
+result1 <- merge(result1, descriptions_df, by.x = "subID", by.y = "subID")
+
+# View the updated result1
   print(result1)
   
 }
